@@ -17,11 +17,15 @@ export class MetalDetectorFacade {
   }
 
   addMetalDetector(metalDetector: ListMetalDetector): void {
-    this.store.dispatch(MetalDetectorActions.addMetalDetectors({ metalDetectors: metalDetector }));
+    if (confirm('Вы уверены, что хотите добавить этот металлоискатель?')) {
+      this.store.dispatch(MetalDetectorActions.addMetalDetectors({metalDetectors: metalDetector}));
+    }
   }
 
   updateMetalDetector(id: number, metalDetector: ListMetalDetector): void {
-    this.store.dispatch(MetalDetectorActions.updateMetalDetector({ id, metalDetector }));
+    if (confirm('Вы уверены, что хотите изменить этот металлоискатель?')) {
+      this.store.dispatch(MetalDetectorActions.updateMetalDetector({id, metalDetector}));
+    }
   }
 
   deleteMetalDetector(id: number) {
