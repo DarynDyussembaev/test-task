@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LanguageService } from './language.service'; // Импортируйте ваш сервис
+import { LanguageService } from './language.service';
 
 @Injectable()
 export class LanguageInterceptor implements HttpInterceptor {

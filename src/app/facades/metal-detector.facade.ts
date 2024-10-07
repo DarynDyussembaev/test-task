@@ -21,7 +21,7 @@ export class MetalDetectorFacade {
   }
 
   updateMetalDetector(id: number, metalDetector: ListMetalDetector): void {
-    this.store.dispatch(MetalDetectorActions.updateMetalDetector({ id, metalDetector })); // Передаем оба аргумента
+    this.store.dispatch(MetalDetectorActions.updateMetalDetector({ id, metalDetector }));
   }
 
   deleteMetalDetector(id: number) {
