@@ -1,0 +1,59 @@
+<h2>{{ config.data.id ? 'Редактировать металлоискатель' : 'Добавить металлоискатель' }}</h2>
+<form [formGroup]="metalDetectorForm" (ngSubmit)="onSave()" class="p-fluid space-y-4">
+  <div class="p-field">
+    <label for="brand" class="block text-gray-700 font-semibold">Бренд</label>
+    <input id="brand" formControlName="brand" pInputText class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+  </div>
+
+  <div class="p-field">
+    <label for="count" class="block text-gray-700 font-semibold">Количество</label>
+    <input id="count" type="number" formControlName="count" pInputText class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+  </div>
+
+  <div class="p-field">
+    <label for="yearIssue" class="block text-gray-700 font-semibold">Год выпуска</label>
+    <input id="yearIssue" formControlName="yearIssue" pInputText class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+  </div>
+
+  <div class="p-field">
+    <label for="typeMetalDetectorsId" class="block text-gray-700 font-semibold">Тип металлоискателя</label>
+    <p-dropdown
+      [options]="types"
+      optionLabel="nameKaz"
+      optionValue="id"
+      formControlName="typeMetalDetectorsId"
+      [placeholder]="'Выберите тип металлоискателя'"
+      [style]="{'width': '100%'}"
+    ></p-dropdown>
+  </div>
+
+  <div class="p-field">
+    <label for="countryManufactureId" class="block text-gray-700 font-semibold">Страна производства</label>
+    <p-dropdown
+      [options]="countries"
+      optionLabel="nameKaz"
+      optionValue="id"
+      formControlName="countryManufactureId"
+      [placeholder]="'Выберите страну производства'"
+      [style]="{'width': '100%'}"
+    ></p-dropdown>
+  </div>
+
+  <div class="p-field">
+    <label for="availabilityId" class="block text-gray-700 font-semibold">Статус наличия</label>
+    <p-dropdown
+      [options]="availabilities"
+      optionLabel="nameKaz"
+      optionValue="id"
+      formControlName="availabilityId"
+      [placeholder]="'Выберите статус'"
+      [style]="{'width': '100%'}"
+    ></p-dropdown>
+  </div>
+
+  <div class="flex space-x-2">
+    <button type="submit" pButton label="Сохранить" [disabled]="metalDetectorForm.invalid" class="bg-indigo-600 text-white rounded-md py-2 px-4 hover:bg-indigo-700"></button>
+    <button type="button" pButton label="Отмена" (click)="onCancel()" class="bg-gray-300 text-gray-800 rounded-md py-2 px-4 hover:bg-gray-400"></button>
+  </div>
+</form>
+
