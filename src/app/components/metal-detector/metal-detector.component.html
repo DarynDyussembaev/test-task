@@ -17,7 +17,7 @@
     />
   </div>
 
-  <p-table [value]="filteredDetectors" [paginator]="true" [rows]="10"  class="p-datatable-striped">
+  <p-table [value]="filteredDetectors" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 50]" [tableStyle]="{'min-width': '100rem'}"  class="p-datatable-striped">
     <ng-template pTemplate="header">
       <tr>
         <th class="text-left px-6 py-4 font-medium text-gray-700 border-b">{{ languageService.getLanguage() === 'kz' ? 'Атауы' : 'Наименование' }}</th>
