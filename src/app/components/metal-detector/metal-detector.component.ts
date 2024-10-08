@@ -103,10 +103,12 @@ export class MetalDetectorComponent implements OnInit {
       if (result) {
         if (detector) {
           this.metalDetectorFacade.updateMetalDetector(detector.id, result);
+          this.metalDetectorFacade.loadMetalDetectors();
         } else {
           this.metalDetectorFacade.addMetalDetector(result);
+          this.metalDetectorFacade.loadMetalDetectors();
         }
-        this.metalDetectorFacade.loadMetalDetectors();
+
       }
     });
   }
